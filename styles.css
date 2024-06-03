@@ -1,0 +1,196 @@
+/* styles.css */
+
+/* Variables de color */
+:root {
+    --primary-color: #004431; /* Verde oscuro */
+    --secondary-color: #ffffff; /* Blanco */
+    --accent-color: #a5d6a7; /* Verde claro */
+    --font-color: #333333; /* Gris oscuro */
+}
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif; /* Aplicar fuente Poppins */
+    color: var(--font-color);
+    background-color: var(--secondary-color);
+}
+
+header {
+    background-color: var(--secondary-color);
+    padding: 20px 0; /* Ajuste de padding */
+    text-align: center; /* Centra el contenido dentro del header */
+}
+
+header .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra el contenido en el eje vertical */
+}
+
+header .logo {
+    max-height: 60px; /* Ajuste de altura máxima para evitar que el logo agrande demasiado el header */
+    height: auto;
+    margin-bottom: 15px; /* Espacio entre el logo y el menú de navegación */
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center; /* Centra las opciones de navegación */
+}
+
+nav ul li {
+    margin: 0 10px; /* Espacio entre las opciones de navegación */
+}
+
+nav ul li a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.hero {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    text-align: center;
+    padding: 100px 0;
+}
+
+.hero h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.5em;
+    margin-bottom: 30px;
+}
+
+.hero .btn {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    padding: 15px 30px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+section {
+    padding: 60px 0;
+}
+
+.about-us img, .product-card img, .testimonial img {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 10px;
+}
+
+.products, .testimonials, .benefits {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.product-card, .testimonial, .benefit {
+    background-color: var(--accent-color);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    flex: 1 1 calc(33.333% - 40px);
+    box-sizing: border-box;
+}
+
+.product-card h3, .testimonial p, .benefit p {
+    margin-top: 10px;
+    color: var(--primary-color);
+}
+
+.cta {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    text-align: center;
+    padding: 40px 0;
+}
+
+.cta .btn {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    padding: 15px 30px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+footer {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    padding: 40px 0;
+    text-align: center;
+}
+
+footer ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+footer ul li a {
+    color: var(--secondary-color);
+    text-decoration: none;
+}
+
+footer .contact-info {
+    margin-bottom: 20px;
+}
+
+footer .contact-info a {
+    margin: 0 10px;
+}
+
+footer .newsletter {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+footer .newsletter input {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+footer .newsletter button {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .products, .testimonials, .benefits {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .product-card, .testimonial, .benefit {
+        flex: 1 1 100%;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin-left: 0;
+        margin-bottom: 10px;
+    }
+}
