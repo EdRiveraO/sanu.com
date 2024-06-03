@@ -9,6 +9,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet"> <!-- Incluir fuente Poppins -->
 </head>
 <body>
+    <a href="https://wa.me/573175943388" class="whatsapp-button" target="_blank">
+        <img src="./img/wpp-logo.png" alt="WhatsApp">
+    </a>
 <!-- Header -->
 <header>
     <div class="container">
@@ -26,11 +29,17 @@
 </header>
 
     <!-- Hero Section -->
-    <section id="inicio" class="hero">
-        <div class="container">
-            <h1>Descubre el Sabor Saludable</h1>
-            <p>Snacks deliciosos y nutritivos para tu día a día</p>
-            <a href="#productos" class="btn">Conoce nuestros productos</a>
+    <section id="inicio" class="carousel">
+        <div class="carousel-container">
+            <div class="carousel-slide">
+                <img src="/img/b1.png" alt="Imagen 1">
+                <img src="/img/b2.JPG" alt="Imagen 2">
+                <img src="/img/b3.JPG" alt="Imagen 3">
+                <img src="/img/b4.png" alt="Imagen 4">
+                <img src="/img/b5.JPG" alt="Imagen 5">
+            </div>
+            <button class="carousel-button prev" onclick="prevSlide()">&#10094;</button>
+            <button class="carousel-button next" onclick="nextSlide()">&#10095;</button>
         </div>
     </section>
     <!-- Product Highlights -->
@@ -38,7 +47,7 @@
         <div class="container">
             <h2>Nuestros Productos</h2>
             <div class="product-card">
-                <img src="producto1.jpg" alt="Producto 1">
+                <img src="./img/1000g.png" alt="Producto 1">
                 <h3>Producto 1</h3>
                 <p>Descripción breve del producto 1.</p>
                 <a href="#" class="btn">Ver Más</a>

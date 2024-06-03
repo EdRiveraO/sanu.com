@@ -18,8 +18,11 @@ header {
     background-color: var(--secondary-color);
     padding: 20px 0; /* Ajuste de padding */
     text-align: center; /* Centra el contenido dentro del header */
+    position: fixed; /* Mantener el header fijo en la parte superior */
+    width: 100%;
+    top: 0;
+    z-index: 1000; /* Asegurar que esté por encima de otros elementos */
 }
-
 header .container {
     display: flex;
     flex-direction: column;
@@ -55,9 +58,10 @@ nav ul li a {
     font-size: 2em;
     cursor: pointer;
     color: var(--primary-color);
-    position: absolute;
-    right: 20px;
+    position: fixed; /* Mantener el icono fijo en la parte superior */
     top: 20px;
+    right: 20px;
+    z-index: 1001; /* Asegurar que esté por encima del menú */
 }
 
 .hero {
@@ -182,6 +186,79 @@ footer .newsletter button {
     border-radius: 5px;
     cursor: pointer;
 }
+/*WHATSAPP*/
+.whatsapp-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000; /* Asegura que el botón esté por encima de otros elementos */
+    width: 50px;
+    height: 50px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.whatsapp-button:hover {
+    transform: scale(1.1);
+}
+
+.whatsapp-button img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+/*----------------------CARRUSEL*/
+.carousel {
+    position: relative;
+    width: 100%;
+    height: 50vh; /* Ajusta la altura del banner */
+    overflow: hidden;
+    background-color: var(--primary-color);
+}
+
+.carousel-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.carousel-slide {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: white;
+    font-size: 2em;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 1000;
+}
+
+.carousel-button.prev {
+    left: 10px;
+}
+
+.carousel-button.next {
+    right: 10px;
+}
 
 /* Responsivo */
 @media (max-width: 768px) {
@@ -218,10 +295,32 @@ footer .newsletter button {
         position: fixed; /* Fijo para mantenerse visible */
         top: 20px;
         right: 20px;
-        z-index: 1000; /* Asegura que el icono esté por encima de otros elementos */
+        z-index: 1001; /* Asegura que el icono esté por encima de otros elementos */
     }
+
 
     .menu-icon.toggle {
         content: 'X';
     }
+    
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: white;
+    font-size: 2em;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 900; /* Asegura que los botones estén por debajo del menú */
+}
+
+.carousel-button.prev {
+    left: 10px;
+}
+
+.carousel-button.next {
+    right: 10px;
+}
 }
