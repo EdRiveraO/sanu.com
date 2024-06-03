@@ -38,8 +38,8 @@ nav ul {
     margin: 0;
     display: flex;
     justify-content: center; /* Centra las opciones de navegación */
+    transition: transform 0.5s ease, opacity 0.9s ease;
 }
-
 nav ul li {
     margin: 0 10px; /* Espacio entre las opciones de navegación */
 }
@@ -48,6 +48,16 @@ nav ul li a {
     color: var(--primary-color);
     text-decoration: none;
     font-weight: bold;
+}
+
+.menu-icon {
+    display: none;
+    font-size: 2em;
+    cursor: pointer;
+    color: var(--primary-color);
+    position: absolute;
+    right: 20px;
+    top: 20px;
 }
 
 .hero {
@@ -175,22 +185,43 @@ footer .newsletter button {
 
 /* Responsivo */
 @media (max-width: 768px) {
-    .products, .testimonials, .benefits {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .product-card, .testimonial, .benefit {
-        flex: 1 1 100%;
-    }
-
     nav ul {
+        display: flex;
         flex-direction: column;
-        align-items: center;
+        align-items: flex-end;
+        background-color: var(--secondary-color);
+        width: 33.33%; /* Un tercio del ancho */
+        height: 100vh; /* 100% de la altura de la vista */
+        position: fixed; /* Fijo para mantenerse visible */
+        top: 0;
+        right: 0;
+        opacity: 0;
+        transform: translateX(100%);
+        transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+
+    nav ul.show {
+        opacity: 1;
+        transform: translateX(0);
     }
 
     nav ul li {
         margin-left: 0;
         margin-bottom: 10px;
+        width: 100%;
+        text-align: right;
+        padding-right: 10px;
+    }
+
+    .menu-icon {
+        display: block;
+        position: fixed; /* Fijo para mantenerse visible */
+        top: 20px;
+        right: 20px;
+        z-index: 1000; /* Asegura que el icono esté por encima de otros elementos */
+    }
+
+    .menu-icon.toggle {
+        content: 'X';
     }
 }
